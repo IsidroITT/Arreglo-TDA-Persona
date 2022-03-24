@@ -1,3 +1,7 @@
+//Realizar un software que permita INSERTAR, MOSTRAR y ELIMINAR datos de un vector
+//con celdillas tipo PERSONA, GRABAR un video mostrando el codigo y ejecutarlo para
+//mostrar su funcionamiento
+
 public class Persona {
     private String nombre;
     private String domicilio;
