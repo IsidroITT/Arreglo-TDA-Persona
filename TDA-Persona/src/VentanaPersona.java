@@ -6,19 +6,20 @@ import static javax.swing.JOptionPane.showMessageDialog;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author isidro
  */
 public class VentanaPersona extends javax.swing.JFrame {
+
     private PilaPersona persona;
     private int tam;
+
     /**
      * Creates new form VentanaPersona
      */
     public VentanaPersona() {
-        initComponents();        
+        initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
 
@@ -31,7 +32,6 @@ public class VentanaPersona extends javax.swing.JFrame {
         }//while
 
         persona = new PilaPersona(tam);
-        System.out.println(tam);
 
     }
 
@@ -158,20 +158,26 @@ public class VentanaPersona extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-        if(txtNombre.getText().isEmpty() || txtDomicilio.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtEdad.getText().isEmpty())
-            showMessageDialog(this,"Todos los campos deben estar llenos");
-        
-        String Nombre=txtNombre.getText();
-        String Domicilio=txtDomicilio.getText();
-        String Telefono=txtTelefono.getText();
-        int Edad=Integer.parseInt(txtEdad.getText());
-        Persona p = new Persona(Nombre, Domicilio, Telefono, Edad);
-        
-        boolean respuesta = persona.insertar(p);
-        if (respuesta) {
-            showMessageDialog(this,"Se inserto correctamente");
-        } else {
-            showMessageDialog(this, "No se pudo insertar");
+        if (txtNombre.getText().isEmpty() || txtDomicilio.getText().isEmpty() || txtTelefono.getText().isEmpty() || txtEdad.getText().isEmpty()) {
+            showMessageDialog(this, "Todos los campos deben estar llenos");
+        }
+
+        try {
+            String Nombre = txtNombre.getText();
+            String Domicilio = txtDomicilio.getText();
+            String Telefono = txtTelefono.getText();
+            int Edad = Integer.parseInt(txtEdad.getText());
+            
+            Persona p = new Persona(Nombre, Domicilio, Telefono, Edad);
+
+            boolean respuesta = persona.insertar(p);
+            if (respuesta) {
+                showMessageDialog(this, "Se inserto correctamente");
+            } else {
+                showMessageDialog(this, "No se pudo insertar");
+            }
+        } catch (NumberFormatException e) {
+            showMessageDialog(this,"La edad debe ser un numero");
         }
 
         txtNombre.setText("");
@@ -184,7 +190,7 @@ public class VentanaPersona extends javax.swing.JFrame {
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         boolean borrar = persona.eleminar();
         if (borrar) {
-            showMessageDialog(this,"Se borro correctamtene el dato de arriba");
+            showMessageDialog(this, "Se borro correctamtene el dato de arriba");
         } else {
             showMessageDialog(this, "ERROR! PILA VACIA");
         }

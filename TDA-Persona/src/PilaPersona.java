@@ -12,7 +12,6 @@ public class PilaPersona {
     public PilaPersona(int tam) {
         tos = -1;
         personaV = new Persona[tam];
-        System.out.println("Pila persona CREADA");
     }//Constructor
 
     //Modularidad
@@ -22,7 +21,6 @@ public class PilaPersona {
         }
         tos++;
         personaV[tos] = p;
-        System.out.println("Persona insertada");
         return true;
     }
 

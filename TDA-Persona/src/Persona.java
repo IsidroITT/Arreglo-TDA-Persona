@@ -15,7 +15,6 @@ public class Persona {
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.edad = edad;
-        System.out.println("Persona creada");
     }
 
     //get y set
