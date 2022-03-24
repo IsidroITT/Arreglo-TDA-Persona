@@ -2,4 +2,4 @@
 
 Realizar un software que permita INSERTAR, MOSTRAR y ELIMINAR datos de un vector con celdillas tipo PERSONA
 
-Video con la explicacion del funcionamieto del proyecto:
+Video con la explicacion del funcionamieto del proyecto: https://youtu.be/xJiuDDK3vEU
