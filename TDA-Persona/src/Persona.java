@@ -45,7 +45,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        System.out.println("Hola");
         return "Nombre: "+this.getNombre()+" Domicilio: "+this.getDomicilio()+" Telefono: "+this.getTelefono()+" Edad: "+this.getEdad();
     }
 }

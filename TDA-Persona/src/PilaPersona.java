@@ -47,7 +47,6 @@ public class PilaPersona {
         for (int i = 0; i <= tos; i++) {
             dato = personaV[i];
             cad = "[" + (i+1) + "] " + dato + "\n" + cad;
-
         }
         return cad;
     }
