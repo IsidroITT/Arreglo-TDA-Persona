@@ -1,8 +1,9 @@
 //Realizar un software que permita INSERTAR, MOSTRAR y ELIMINAR datos de un vector
-//con celdillas tipo PERSONA, GRABAR un video mostrando el codigo y ejecutarlo para
-//mostrar su funcionamiento
+//con celdillas tipo PERSONA, GRABAR un video de 5 a 10 minutos mostrando el codigo 
+//y ejecutarlo para mostrar su funcionamiento
 
 public class Persona {
+    
     private String nombre;
     private String domicilio;
     private String telefono;
@@ -14,6 +15,7 @@ public class Persona {
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.edad = edad;
+        System.out.println("Persona creada");
     }
 
     //get y set
@@ -40,5 +42,11 @@ public class Persona {
     }
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("Hola");
+        return "Nombre: "+this.getNombre()+" Domicilio: "+this.getDomicilio()+" Telefono: "+this.getTelefono()+" Edad: "+this.getEdad();
     }
 }
